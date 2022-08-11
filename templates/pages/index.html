@@ -1,5 +1,137 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
-<h1>Home page</h1>
+<main>
+      <div class="hero">
+        <div class="container">
+          <img src="{% static 'images/profile-grey.jpg' %}" alt="Profile photo" />
+          <h1>Welcome To Website</h1>
+          <p>
+            Hi, my name is Patrik Duda. I am a junior programmer with electrical
+            engineering background.
+          </p>
+        </div>
+      </div>
+      <section class="container content">
+        <h2>My skills</h2>
+        <div class="grid">
+          <div class="skill">
+            <div class="outer">
+              <div class="inner">
+                <p class="number">80%</p>
+              </div>
+              <svg class="svg">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#008080" />
+                    <stop offset="100%" stop-color="#004c4c" />
+                  </linearGradient>
+                </defs>
+                <circle cx="150" cy="150" r="135" stroke-linecap="round" class="circle circle1" />
+                <style>
+                  @media (prefers-reduced-motion: no-preference) {
+                    .animation .circle1 {
+                      animation: anim1 1.6s linear forwards;
+                    }
+                  }
+                  @keyframes anim1 {
+                      100% {
+                          stroke-dashoffset: 172;
+                      }
+                  }
+                </style>
+              </svg>
+            </div>
+            <h3 class="title">Python</h3>
+          </div>
+          <div class="skill">
+            <div class="outer">
+              <div class="inner">
+                <p class="number">60%</p>
+              </div>
+              <svg class="svg">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#008080" />
+                    <stop offset="100%" stop-color="#004c4c" />
+                  </linearGradient>
+                </defs>
+                <circle cx="150" cy="150" r="135" stroke-linecap="round" class="circle circle2" />
+                <style>
+                  @media (prefers-reduced-motion: no-preference) {
+                    .animation .circle2 {
+                      animation: anim2 1.2s linear forwards;
+                    }
+                  }
+                  @keyframes anim2 {
+                      100% {
+                          stroke-dashoffset: 344;
+                      }
+                  }
+                </style>
+              </svg>
+            </div>
+            <h3 class="title">Django</h3>
+          </div>
+          <div class="skill">
+            <div class="outer">
+              <div class="inner">
+                <p class="number">70%</p>
+              </div>
+              <svg class="svg">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#008080" />
+                    <stop offset="100%" stop-color="#004c4c" />
+                  </linearGradient>
+                </defs>
+                <circle cx="150" cy="150" r="135" stroke-linecap="round"  class="circle circle3"/>
+                  <style>
+                  @media (prefers-reduced-motion: no-preference) {
+                    .animation .circle3 {
+                      animation: anim3 1.4s linear forwards;
+                    }
+                  }
+                  @keyframes anim3 {
+                      100% {
+                          stroke-dashoffset: 258;
+                      }
+                  }
+                </style>
+              </svg>
+            </div>
+            <h3 class="title">JavaScript</h3>
+          </div>
+      
+          <div class="skill">
+            <div class="outer">
+              <div class="inner">
+                <p class="number">10%</p>
+              </div>
+              <svg class="svg">
+                <defs>
+                  <linearGradient id="GradientColor">
+                    <stop offset="0%" stop-color="#008080" />
+                    <stop offset="100%" stop-color="#004c4c" />
+                  </linearGradient>
+                </defs>
+                <circle cx="150" cy="150" r="135" stroke-linecap="round" class="circle circle4"/>
+                  <style>
+                  @media (prefers-reduced-motion: no-preference) {
+                    .animation .circle4 {
+                      animation: anim4 0.2s linear forwards;
+                    }
+                  }
+                  @keyframes anim4 {
+                      100% {
+                          stroke-dashoffset: 774;
+                      }
+                  }
+                </style>
+              </svg>
+            </div>
+            <h3 class="title">Docker</h3>
+          </div>
+      </section>
+    </main>
 {% endblock %}

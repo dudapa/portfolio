@@ -1,12 +1,65 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/fa0b132631.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Patrik Duda</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <div class="container">
+          <div class="collapsible">
+            <i class="fas fa-bars active"></i>
+            <i class="fas fa-times"></i>
+          </div>
+          <div class="bar-icons">
+            <a href="https://github.com/dudapa" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <ul class="menu">
+            <li> <a href="{% url 'index' %}"
+                {% if '/' == request.path %}
+                class="current"
+                {% endif %}>Home</a>
+            </li>
+            <li><a href="{% url 'about' %}"
+                href="{% url 'index' %}"
+                {% if 'about' in request.path %}
+                class="current"
+                {% endif %}>About</a>
+            </li>
+            <li><a href="projects.html" 
+                href="{% url 'index' %}"
+                {% if 'projects' in request.path %}
+                class="current"
+                {% endif %}>Projects</a>
+            </li>
+            <li><a href="{% url 'contact' %}" href="{% url 'index' %}"
+                {% if 'contact' in request.path %}
+                class="current"
+                {% endif %}>Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     {% block content %} {% endblock %}
-</body>
+
+    <footer>
+      Copyright &copy;
+      <span class="year"></span>
+    </footer>
+    <script src="{% static 'script.js' %}"></script>
+  </body>
 </html>
