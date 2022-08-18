@@ -1,86 +1,32 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 <main>
   <section class="container content2">
     <div class="grid2">
-      <div class="project">
-        <div class="picture">
-          <img
-            src="https://images.unsplash.com/photo-1613160717888-faa82cdb8a94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            alt="Project image"
-          />
-        </div>
-        <h3>Space Ware</h3>
-        <div class="description">
-          <h4>Description:</h4>
-        </div>
-        <div class="technologies">
-          <h4>Technologies:</h4>
-        </div>
-        <div class="buttons">
-          <a href="#" class="code git">View Code</a>
-          <a href="#" class="code live">Live Code</a>
-        </div>
-      </div>
 
+      {% for project in projects %}
       <div class="project">
         <div class="picture">
           <img
-            src="https://images.unsplash.com/photo-1613160717888-faa82cdb8a94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+            src="{{project.project_image.url}}"
             alt="Project image"
           />
         </div>
-        <h3>Space Ware</h3>
+        <h3>{{project.title}}</h3>
         <div class="description">
-          <h4>Description:</h4>
+          <h4>Description</h4>
+          <p>{{project.description}}</p>
         </div>
         <div class="technologies">
-          <h4>Technologies:</h4>
+          <h4>Technologies</h4>
+          <p>{{project.technologies}}</p>
         </div>
         <div class="buttons">
-          <a href="#" class="code git">View Code</a>
-          <a href="#" class="code live">Live Code</a>
+          <a href="{{project.view_code}}" class="code git" target="_blank">View Code</a>
+          <a href="{{project.live_code}}" class="code live" target="_blank">Live Code</a>
         </div>
       </div>
-
-      <div class="project">
-        <div class="picture">
-          <img
-            src="https://images.unsplash.com/photo-1613160717888-faa82cdb8a94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            alt="Project image"
-          />
-        </div>
-        <h3>Space Ware</h3>
-        <div class="description">
-          <h4>Description:</h4>
-        </div>
-        <div class="technologies">
-          <h4>Technologies:</h4>
-        </div>
-        <div class="buttons">
-          <a href="#" class="code git">View Code</a>
-          <a href="#" class="code live">Live Code</a>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="picture">
-          <img
-            src="https://images.unsplash.com/photo-1613160717888-faa82cdb8a94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-            alt="Project image"
-          />
-        </div>
-        <h3>Space Ware</h3>
-        <div class="description">
-          <h4>Description:</h4>
-        </div>
-        <div class="technologies">
-          <h4>Technologies:</h4>
-        </div>
-        <div class="buttons">
-          <a href="#" class="code git">View Code</a>
-          <a href="#" class="code live">Live Code</a>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </section>
 </main>

@@ -3,7 +3,6 @@ from skills.models import Skill
 
 def index(request):
     skills = Skill.objects.all()
-    
     return render(request, 'pages/index.html', {'skills': skills})
 
 def about(request):
