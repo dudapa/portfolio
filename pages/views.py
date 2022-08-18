@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from skills.models import Skill
 
 def index(request):
-    return render(request, 'pages/index.html')
+    skills = Skill.objects.all()
+    
+    return render(request, 'pages/index.html', {'skills': skills})
 
 def about(request):
     return render(request, 'pages/about.html')
