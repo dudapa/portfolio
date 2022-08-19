@@ -403,7 +403,7 @@ nav.active .container {
 }
 
 #message {
-  height: 200px;
+  height: 150px;
   font-family: inherit;
 }
 
@@ -420,6 +420,7 @@ nav.active .container {
   visibility: hidden;
 }
 
+.form .small-name.error,
 .form .small-email.error,
 .form .small-message.error {
   color: #e74c3c;

@@ -1,50 +1,59 @@
-{% extends 'base.html' %}
-{% block content %}
-    <main>
-      <section class="container content3">
-        <div class="contacts">
-          <h2>Contacts</h2>
-          <table class="table">
-            <tr>
-              <td>Name:</td>
-              <td>Patrik Duda</td>
-            </tr>
-            <tr>
-              <td>Phone:</td>
-              <td>+420 606 275 393</td>
-            </tr>
-            <tr>
-              <td>Email:</td>
-              <td>patrikduda94@gmail.com</td>
-            </tr>
-            <tr>
-              <td>Linkedin:</td>
-              <td><a href="#">view Linkedin</a></td>
-            </tr>
-            <tr>
-              <td>CV:</td>
-              <td><a href="#">view CV</a></td>
-            </tr>
-          </table>
+{% extends 'base.html' %} {% block content %}
+<main>
+  <section class="container content3">
+    <div class="contacts">
+      <h2>Contacts</h2>
+      <table class="table">
+        <tr>
+          <td>Name:</td>
+          <td>Patrik Duda</td>
+        </tr>
+        <tr>
+          <td>Phone:</td>
+          <td>+420 606 275 393</td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td>patrikduda94@gmail.com</td>
+        </tr>
+        <tr>
+          <td>Linkedin:</td>
+          <td><a href="#">view Linkedin</a></td>
+        </tr>
+        <tr>
+          <td>CV:</td>
+          <td><a href="#">view CV</a></td>
+        </tr>
+      </table>
+    </div>
+    <div class="contact-form">
+      <h2>Contact me</h2>
+      <form class="form" action="">
+        <div class="form-control">
+          <label for="name">Your name</label>
+          <input type="text" id="name" placeholder="Your name" />
+          <small class="small-name">Check message</small>
         </div>
-        <div class="contact-form">
-          <h2>Contact me</h2>
-          <form class="form" action="">
-            <div class="form-control">
-              <label for="email">Your email</label>
-              <input type="email" id="email" placeholder="Your email"/>
-              <small class="small-email">Check message</small>
-            </div>
-            <div class="form-control">
-              <label for="message">Your message</label>
-              <textarea name="message" id="message"  rows="20" placeholder="Type message"></textarea>
-              <small class="small-message">Check message</small>
-            </div>
-            <div class="form-control">
-              <button type="submit">Submit</button>
-            </div>
-          </form>
+        <div class="form-control">
+          <label for="email">Your email</label>
+          <input type="email" id="email" placeholder="Your email" />
+          <small class="small-email">Check message</small>
         </div>
-      </section>
-    </main>
+        <div class="form-control">
+          <label for="message">Your message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="20"
+            placeholder="Type message"
+          ></textarea>
+          <small class="small-message">Check message</small>
+        </div>
+        <div class="form-control">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
 {% endblock %}

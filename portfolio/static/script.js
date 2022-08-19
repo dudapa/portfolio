@@ -7,8 +7,10 @@ const faTimes = document.querySelector('.fa-times');
 const skills = document.querySelectorAll('.skill');
 const year = document.querySelector('.year');
 const form = document.querySelector('.form');
+const senderName = document.querySelector('#name');
 const email = document.querySelector('#email');
 const message = document.querySelector('#message');
+const smallName = document.querySelector('.small-name');
 const smallEmail = document.querySelector('.small-email');
 const smallMessage = document.querySelector('.small-message');
 let numbers = document.querySelector('.number');
@@ -66,29 +68,45 @@ for (skill of skills) {
 
 // Contact form validation
 
+// Check name
+function checkName(name) {
+  if (name.value.trim() === ""){
+    smallName.classList.add('error');
+    smallName.textContent = 'You have to enter your name';
+    return false;
+  }
+  return true;
+}
+
 // Check email
 function checkEmail(email) {
   if (email.value.trim() === ""){
     smallEmail.classList.add('error');
     smallEmail.textContent = 'You have to enter your email';
+    return false;
   }
+  return true;
 }
 
 // Check message
 function checkMessage(message){
   if (message.value.trim() == ""){
     smallMessage.classList.add('error');
-    smallMessage.textContent = 'You are trying to send me an empty email!'
-  } else {
-    smallMessage.classList.add('success');
-    smallMessage.textContent = 'Thank you for your email :)';
-    email.value = '';
-    message.value = '';
-  }
+    smallMessage.textContent = 'You are trying to send me an empty email!';
+    return false
+  } 
+  smallMessage.classList.add('success');
+  smallMessage.textContent = 'Thank you for your email :)';
+  senderName.value = '';
+  email.value = '';
+  message.value = '';
+  return true;
+  
 }
 
 // Remove all error and success classes
 function refreshToDefaultState() {
+  smallName.classList.remove('error');
   smallEmail.classList.remove('error');
   smallMessage.classList.remove('error', 'success');
 }
@@ -105,6 +123,7 @@ collapsible.addEventListener('click', showMenu)
 form.addEventListener('submit', function(e){
   e.preventDefault();
   refreshToDefaultState();
-  checkEmail(email);
-  checkMessage(message);
+  if (checkName(senderName) && checkEmail(email)) {
+    checkMessage(message);
+  }
 })
