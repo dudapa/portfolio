@@ -28,16 +28,15 @@
     </div>
     <div class="contact-form">
       <h2>Contact me</h2>
-      <form class="form" action="">
+      <form class="form" action="{% url 'contact' %}" method="POST">
+        {% csrf_token %}
         <div class="form-control">
           <label for="name">Your name</label>
-          <input type="text" id="name" placeholder="Your name" />
-          <small class="small-name">Check message</small>
+          <input type="text" id="name" name="name" placeholder="Your name" required/>
         </div>
         <div class="form-control">
           <label for="email">Your email</label>
-          <input type="email" id="email" placeholder="Your email" />
-          <small class="small-email">Check message</small>
+          <input type="email" id="email" name="email" placeholder="Your email" required />
         </div>
         <div class="form-control">
           <label for="message">Your message</label>
@@ -46,12 +45,20 @@
             id="message"
             rows="20"
             placeholder="Type message"
+            required
           ></textarea>
-          <small class="small-message">Check message</small>
         </div>
         <div class="form-control">
-          <button type="submit">Submit</button>
+            <input type="submit" value="Submit">
         </div>
+        {% if messages %}
+        {% for message in messages %}
+        <div class="answer">
+          <p> {{ message }} </p>
+        </div>
+        {% endfor %}
+        {% endif %}
+
       </form>
     </div>
   </section>

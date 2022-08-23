@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from skills.models import Skill
+from contacts.models import Contact
 
 def index(request):
     skills = Skill.objects.all()
@@ -8,5 +10,19 @@ def index(request):
 def about(request):
     return render(request, 'pages/about.html')
 
+def contacts(request):
+    return render(request, 'pages/contacts.html')
+
 def contact(request):
-    return render(request, 'pages/contact.html')
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        contact = Contact()
+        contact.name = name
+        contact.email = email
+        contact.message = message
+        contact.save()
+        messages.success(request, 'Your message has been submitted, I will response you ASAP')
+        return redirect('/contacts/')
+    
