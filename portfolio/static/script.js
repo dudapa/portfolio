@@ -50,21 +50,28 @@ function showSkill(ele) {
 }
 
 // Create the observer for skill section 
-const observer = new IntersectionObserver(function (entries, observer) {
-  entries.forEach((entry) => {
-    // If the element is visible
-    if (entry.isIntersecting) {
-      let number = entry.target.querySelector('.number');
-      if (!entry.target.classList.contains('animation')){
-        showSkill(number);
-      } 
-      entry.target.classList.add('animation');
-    }
-  });
+const observer = new IntersectionObserver(revealSkill, {
+  root: null,
+  threshold: 0.3,
 });
 
 for (skill of skills) {
   observer.observe(skill);
 }
 
+function revealSkill(entries) {
+  entries.forEach((entry) => {
+    // If the element is visible
+    if (entry.isIntersecting) {
+      let number = entry.target.querySelector('.number');
+      if (!entry.target.classList.contains('animation')) {
+        showSkill(number);
+      }
+      entry.target.classList.add('animation');
+    }
+  });
+}
 
+//  EventListeners
+ window.addEventListener('scroll', activeNav);
+ collapsible.addEventListener('click', showMenu);
