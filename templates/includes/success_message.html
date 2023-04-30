@@ -1,0 +1,9 @@
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="success-message">
+                <p>{{ message.message }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}

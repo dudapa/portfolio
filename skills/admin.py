@@ -3,6 +3,6 @@ from .models import Skill
 
 
 class SkillAdmin(admin.ModelAdmin):
-    list_display = ('title', 'skill')
+    list_display = ('name', 'value')
 
 admin.site.register(Skill, SkillAdmin)

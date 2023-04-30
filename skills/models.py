@@ -2,15 +2,15 @@ from django.db import models
 
 
 class Skill(models.Model):
-    title = models.CharField(max_length=128)
-    skill = models.IntegerField()
+    name = models.CharField(max_length=128)
+    value = models.IntegerField()
 
     def __str__(self):
-        return self.title
+        return self.name
     
     @property
     def calc_skill(self):
-        return 860 - (860 * self.skill) / 100
+        return 860 - (860 * self.value) / 100
 
     @property
     def add_class(self):
@@ -18,4 +18,4 @@ class Skill(models.Model):
 
     @property
     def duration(self):
-        return (2*self.skill)/100
+        return (2*self.value)/100

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'games/breakout/style.css' %}" />
+    <script src="https://kit.fontawesome.com/fa0b132631.js" crossorigin="anonymous"></script>
+    <title>Breakout</title>
+  </head>
+  <body>
+    <canvas class="canvas"></canvas>
+
+    <h1 class="game-over">Game Over!</h1>
+    <h1 class="game-win">You won the game!</h1>
+    <button class="btn start-game">Start Game</button>
+    <button class="btn play-again">Play Again</button>
+
+    <button class="btn btn-rules">Show Rules</button>
+    <button class="btn btn-settings">Settings</button>
+    <div class="rules">
+      <h2>How To Play</h2>
+      <p>
+        Use ← → keys to move the paddle to bounce the ball up and break the
+        blocks. 
+      </p>
+      <p>If you miss the ball, the game will be over.</p>
+      <p> Click on 'Start Game' button or push 'space key' to start game.</p>
+      <button class="btn btn-close">Close</button>
+    </div>
+
+    <div class="settings">
+      <p>Select color:</p>
+      <div class="color-pallete">
+        <div class="color color1 selected"></div>
+        <div class="color color2"></div>
+        <div class="color color3"></div>
+        <div class="color color4"></div>
+        <div class="color color5"></div>
+        <div class="color color6"></div>
+        <div class="color color7"></div>
+        <div class="random-color"><i class="fas fa-question"></i></div>
+      </div>
+      <button class="btn btn-close-settings">Close</button>
+    </div>
+
+    <div class="top-results">
+      <h2>Top 3 Results</h2>
+      <ol>
+        <li><span class="first">00:00</span> s</li>
+        <li><span class="second">00:00</span> s</i></li>
+        <li><span class="third">00:00</span> s</li>
+      </ol>
+    </div>
+
+    <script src="{% static 'games/breakout/script.js' %}"></script>
+  </body>
+</html>
