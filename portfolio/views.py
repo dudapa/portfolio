@@ -45,7 +45,7 @@ def proccess_message(request):
                 'email': email,
                 'message': message
             })
-            send_email = EmailMessage(email_subject, email_message, to=['duzdak@gmail.com'])
+            send_email = EmailMessage(email_subject, email_message, to=['patrikduda001@gmail.com'])
             send_email.send()
             messages.success(request, 'Thank you for your message. I will response you ASAP.')
             return redirect('/#contacts')
