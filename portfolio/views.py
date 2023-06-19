@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from skills.models import Skill
 from projects.models import Project
 from contacts.forms import ContactForm
-from contacts.models import Contact
+from contacts.models import Contact, MyContact
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 from django.contrib import messages
@@ -12,12 +12,13 @@ from django.contrib import messages
 def index(request):
     skills = Skill.objects.all()
     projects = Project.objects.all()
-
+    myinfo = MyContact.objects.get(myname='Patrik Duda')
     contact_form = ContactForm()
 
     context = {
         'skills': skills,
         'projects': projects,
+        'myinfo': myinfo,
         'contact_form': contact_form
         
     }
