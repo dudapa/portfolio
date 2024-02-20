@@ -85,47 +85,6 @@
         
       </section>
 
-      <section id="skills" class="skills">
-        <h1>My Skills</h1>
-        <p class="note"><span>Note:</span>This is just my personal estimation of my abilities. Please take that into consideration.</p>
-        <div class="grid-wrapper">
-          <div class="skills-grid">
-            {% for skill in skills %}
-            <div class="skill">
-              <div class="outer">
-                <div class="inner">
-                  <p class="number">{{ skill.value }}%</p>
-                </div>
-                <svg class="svg">
-                  <defs>
-                    <linearGradient id="GradientColor">
-                      <stop offset="0%" stop-color="#008080" />
-                      <stop offset="100%" stop-color="#004c4c" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="150" cy="150" r="135" stroke-linecap="round" class="{{skill.add_class}}" />
-                  <style>
-                    @media (prefers-reduced-motion: no-preference) {
-                      .animation .circle{{skill.id}} {
-                        animation: anim{{skill.id}} {{skill.duration}}s linear forwards;
-                      }
-                    }
-                    @keyframes anim{{skill.id}} {
-                        100% {
-                            stroke-dashoffset: {{skill.calc_skill}};
-                        }
-                    }
-                  </style>
-                </svg>
-              </div>
-              <h3 class="title">{{ skill.name }}</h3>
-            </div>
-            {% endfor %}
-
-        </div>
-      </section>
-
-
       <section id="projects" class="projects">
         <h1>Projects</h1>
         <div class="grid-wrapper">
