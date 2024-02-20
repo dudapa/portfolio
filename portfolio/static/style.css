@@ -201,14 +201,14 @@ nav.active .container {
 
 .skills .skills-grid {
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: repeat(5, 250px);
   grid-row-gap: 50px;
   align-items: center;
   justify-items: center;
 }
 
 .skills img {
-  width: 200px;
+  width: 130px;
 }
 
 .skills h2 {
@@ -225,7 +225,7 @@ nav.active .container {
 
 #interestedLearningTitle {
   color: #c22f1f;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 /* Grid for projects */
@@ -542,7 +542,7 @@ footer {
 @media screen and (max-width: 1300px) {
   .skills .skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(3, 250px);
   }
 
   /* Grid for projects */
@@ -570,7 +570,7 @@ footer {
   /* Grid for skills */
   .skills .skills-grid {
     display: grid;
-    grid-template-columns: repeat(1, 300px);
+    grid-template-columns: repeat(2, 200px);
   }
 
   /* Grid for projects */
@@ -690,11 +690,17 @@ footer {
 
 
 @media screen and (max-width: 450px) {
-    .par-img img {
+  .par-img img {
       width: 100%;
-    }
-
-    .skills h2 {
-    margin-bottom: 0;
   }
+
+  .skills img {
+    width: 100px;
+  }
+
+  .skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+  }
+
 }
