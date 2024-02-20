@@ -61,6 +61,32 @@
 
       <section id="skills" class="skills">
         <h1>My Skills</h1>
+        <!-- <p class="note"><span>Note:</span>This is note</p> -->
+        <h2 id="confidentWithTitle">Confident With</h2>
+        <div class="grid-wrapper">
+          <div class="skills-grid">
+            {% for skill in confident_skills %}
+            <div class="skill">
+              <img src="{{ skill.image.url }}" alt="Confident skill">
+            </div>
+            {% endfor %}
+        </div>
+
+      <h2 id="interestedLearningTitle">Interested In and Learning</h2>
+      <div class="grid-wrapper">
+          <div class="skills-grid">
+            {% for skill in learning_skills %}
+            <div class="skill">
+              <img src="{{ skill.image.url }}" alt="Learning skill">
+            </div>
+            {% endfor %}
+        </div>
+
+        
+      </section>
+
+      <section id="skills" class="skills">
+        <h1>My Skills</h1>
         <p class="note"><span>Note:</span>This is just my personal estimation of my abilities. Please take that into consideration.</p>
         <div class="grid-wrapper">
           <div class="skills-grid">

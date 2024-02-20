@@ -10,18 +10,22 @@ from django.contrib import messages
 
 
 def index(request):
-    skills = Skill.objects.all()
+    confident_skills = Skill.objects.filter(confident=True)
+    learning_skills = Skill.objects.filter(confident=False)
     projects = Project.objects.all()
     myinfo = MyContact.objects.get(myname='Patrik Duda')
     contact_form = ContactForm()
 
     context = {
-        'skills': skills,
+        'confident_skills': confident_skills,
+        'learning_skills': learning_skills,
         'projects': projects,
         'myinfo': myinfo,
         'contact_form': contact_form
         
     }
+    print('confident skills: ', confident_skills)
+    print('learning skills: ', learning_skills)
     return render(request,  'index.html', context)
 
 def proccess_message(request):
