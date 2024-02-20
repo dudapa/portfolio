@@ -216,6 +216,7 @@ nav.active .container {
   margin-bottom: 30px;
   font-size: 30px;
   text-align: center;
+  text-decoration: underline;
 }
 
 #confidentWithTitle {
@@ -224,6 +225,7 @@ nav.active .container {
 
 #interestedLearningTitle {
   color: #c22f1f;
+  margin-top: 100px;
 }
 
 /* Grid for projects */
