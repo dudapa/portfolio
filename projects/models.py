@@ -9,5 +9,8 @@ class Project(models.Model):
     live_code = models.CharField(max_length=255, blank=True, null=True)
     project_image = models.ImageField(upload_to='images/projects/')
     published = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
+
     def __str__(self):
         return self.title
