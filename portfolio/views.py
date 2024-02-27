@@ -12,7 +12,7 @@ from django.contrib import messages
 def index(request):
     confident_skills = Skill.objects.filter(confident=True)
     learning_skills = Skill.objects.filter(confident=False)
-    projects = Project.objects.all().order_by()
+    projects = Project.objects.all().order_by('-updated_at')
     myinfo = MyContact.objects.get(myname='Patrik Duda')
     contact_form = ContactForm()
 
