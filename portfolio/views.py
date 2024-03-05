@@ -12,7 +12,7 @@ from django.contrib import messages
 def index(request):
     confident_skills = Skill.objects.filter(confident=True)
     learning_skills = Skill.objects.filter(confident=False)
-    projects = Project.objects.all().order_by('-updated_at')
+    projects = Project.objects.all().order_by('-project_weight')
     myinfo = MyContact.objects.get(myname='Patrik Duda')
     contact_form = ContactForm()
 
@@ -24,8 +24,7 @@ def index(request):
         'contact_form': contact_form
         
     }
-    print('confident skills: ', confident_skills)
-    print('learning skills: ', learning_skills)
+
     return render(request,  'index.html', context)
 
 def proccess_message(request):
