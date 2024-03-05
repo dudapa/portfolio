@@ -8,10 +8,10 @@ Welcome to my personal portfolio! This web application showcases my skills, proj
 In the "Skills" section, you can explore a list of my technical skills. These can be easily managed and updated through the Django Admin Site.
 
 ### 2. Projects
-The "Projects" section highlights some of the notable projects I have worked on. You have the option to add new projects through the Django Admin Site, making it easy to keep your portfolio up-to-date.
+The "Projects" section highlights some of the my projects I have worked on. There is the option to add new projects through the Django Admin Site, making it easy to keep my portfolio up-to-date.
 
 ### 3. About Me
-Get to know me better in the "About Me" section. Share your background, experiences, and what drives you professionally.
+This section introduces how I learned programming.
 
 ### 4. Contacts
-Connect with me! The "Contacts" section provides information on how to reach out, whether it's for potential collaborations, job opportunities, or just a friendly conversation.
+This section contains my contact informations and provides formular, through which you can contact me.
