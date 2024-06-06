@@ -15,3 +15,9 @@ This section introduces how I learned programming.
 
 ### 4. Contacts
 This section contains my contact informations and provides formular, through which you can contact me.
+
+## Tech Stack
+
+- **Framework**: Django
+- **Database**: PostgreSQL
+- **Front-end**: HTML, CSS, JavaScript (generated server-side)
